@@ -214,12 +214,12 @@ function renderResult(result, topScore, terms) {
 
 function initSearch() {
   const form = document.querySelector(".search-form-wrap");
-  if (!form) {
-    return;
-  }
   const input = document.querySelector(".search-input");
   const status = document.querySelector(".search-status");
   const list = document.querySelector(".results");
+  if (!form || !input || !status || !list) {
+    return;
+  }
   const index = buildIndex(CORPUS);
 
   function run(query) {
